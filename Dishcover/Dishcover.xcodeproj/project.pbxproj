@@ -17,6 +17,11 @@
 		FFC7F2672B69F67F002EBED9 /* MockDishcoverService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2662B69F67F002EBED9 /* MockDishcoverService.swift */; };
 		FFC7F2722B6A04ED002EBED9 /* Meals.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2712B6A04ED002EBED9 /* Meals.swift */; };
 		FFC7F2742B6A052F002EBED9 /* MealDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2732B6A052F002EBED9 /* MealDetails.swift */; };
+		FFC7F2772B6A24EC002EBED9 /* MealDetailsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2762B6A24EC002EBED9 /* MealDetailsCache.swift */; };
+		FFC7F27A2B6A29A4002EBED9 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2792B6A29A4002EBED9 /* ImageLoader.swift */; };
+		FFC7F27C2B6A2A12002EBED9 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F27B2B6A2A12002EBED9 /* ImageCache.swift */; };
+		FFC7F27F2B6A2E74002EBED9 /* MealsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F27E2B6A2E74002EBED9 /* MealsViewModel.swift */; };
+		FFC7F2812B6A2E95002EBED9 /* MealDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2802B6A2E95002EBED9 /* MealDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,11 @@
 		FFC7F2662B69F67F002EBED9 /* MockDishcoverService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDishcoverService.swift; sourceTree = "<group>"; };
 		FFC7F2712B6A04ED002EBED9 /* Meals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meals.swift; sourceTree = "<group>"; };
 		FFC7F2732B6A052F002EBED9 /* MealDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetails.swift; sourceTree = "<group>"; };
+		FFC7F2762B6A24EC002EBED9 /* MealDetailsCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsCache.swift; sourceTree = "<group>"; };
+		FFC7F2792B6A29A4002EBED9 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		FFC7F27B2B6A2A12002EBED9 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		FFC7F27E2B6A2E74002EBED9 /* MealsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsViewModel.swift; sourceTree = "<group>"; };
+		FFC7F2802B6A2E95002EBED9 /* MealDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,10 +73,9 @@
 		FFC7F24D2B69F0CF002EBED9 /* Dishcover */ = {
 			isa = PBXGroup;
 			children = (
+				FFC7F27D2B6A2E12002EBED9 /* App */,
 				FFC7F2682B6A03E4002EBED9 /* Core */,
 				FFC7F25C2B69F335002EBED9 /* Shared */,
-				FFC7F24E2B69F0CF002EBED9 /* DishcoverApp.swift */,
-				FFC7F2502B69F0CF002EBED9 /* ContentView.swift */,
 				FFC7F2522B69F0D1002EBED9 /* Assets.xcassets */,
 				FFC7F2542B69F0D1002EBED9 /* Preview Content */,
 			);
@@ -84,6 +93,7 @@
 		FFC7F25C2B69F335002EBED9 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				FFC7F2782B6A2979002EBED9 /* Images */,
 				FFC7F2612B69F5C7002EBED9 /* Network Layer */,
 			);
 			path = Shared;
@@ -112,24 +122,25 @@
 			isa = PBXGroup;
 			children = (
 				FFC7F26A2B6A03FD002EBED9 /* MealDetails */,
-				FFC7F2692B6A03F2002EBED9 /* AllMeals */,
+				FFC7F2692B6A03F2002EBED9 /* Meals */,
 			);
 			path = Core;
 			sourceTree = "<group>";
 		};
-		FFC7F2692B6A03F2002EBED9 /* AllMeals */ = {
+		FFC7F2692B6A03F2002EBED9 /* Meals */ = {
 			isa = PBXGroup;
 			children = (
 				FFC7F2702B6A046A002EBED9 /* View */,
 				FFC7F26F2B6A045C002EBED9 /* ViewModel */,
 				FFC7F26E2B6A043D002EBED9 /* Model */,
 			);
-			path = AllMeals;
+			path = Meals;
 			sourceTree = "<group>";
 		};
 		FFC7F26A2B6A03FD002EBED9 /* MealDetails */ = {
 			isa = PBXGroup;
 			children = (
+				FFC7F2752B6A24DB002EBED9 /* Cache */,
 				FFC7F26D2B6A0433002EBED9 /* Model */,
 				FFC7F26C2B6A0429002EBED9 /* View */,
 				FFC7F26B2B6A0421002EBED9 /* ViewModel */,
@@ -140,6 +151,7 @@
 		FFC7F26B2B6A0421002EBED9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FFC7F2802B6A2E95002EBED9 /* MealDetailsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -170,6 +182,7 @@
 		FFC7F26F2B6A045C002EBED9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FFC7F27E2B6A2E74002EBED9 /* MealsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -177,8 +190,34 @@
 		FFC7F2702B6A046A002EBED9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FFC7F2502B69F0CF002EBED9 /* ContentView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FFC7F2752B6A24DB002EBED9 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7F2762B6A24EC002EBED9 /* MealDetailsCache.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		FFC7F2782B6A2979002EBED9 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7F2792B6A29A4002EBED9 /* ImageLoader.swift */,
+				FFC7F27B2B6A2A12002EBED9 /* ImageCache.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		FFC7F27D2B6A2E12002EBED9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7F24E2B69F0CF002EBED9 /* DishcoverApp.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,10 +290,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFC7F27C2B6A2A12002EBED9 /* ImageCache.swift in Sources */,
 				FFC7F2722B6A04ED002EBED9 /* Meals.swift in Sources */,
 				FFC7F2742B6A052F002EBED9 /* MealDetails.swift in Sources */,
+				FFC7F27A2B6A29A4002EBED9 /* ImageLoader.swift in Sources */,
 				FFC7F2512B69F0CF002EBED9 /* ContentView.swift in Sources */,
+				FFC7F27F2B6A2E74002EBED9 /* MealsViewModel.swift in Sources */,
 				FFC7F2672B69F67F002EBED9 /* MockDishcoverService.swift in Sources */,
+				FFC7F2772B6A24EC002EBED9 /* MealDetailsCache.swift in Sources */,
+				FFC7F2812B6A2E95002EBED9 /* MealDetailsViewModel.swift in Sources */,
 				FFC7F2602B69F3A4002EBED9 /* DishcoverApiError.swift in Sources */,
 				FFC7F25E2B69F370002EBED9 /* HTTPDataDownloader.swift in Sources */,
 				FFC7F2652B69F65D002EBED9 /* DishcoverDataService.swift in Sources */,

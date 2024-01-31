@@ -9,7 +9,7 @@ import Foundation
 
 protocol CoinServiceProtocol {
     func fetchMeals() async throws -> MealResponse
-    func fetchMealDetails(id: String) async throws -> MealDetailsResponse?
+    func fetchMealDetails(id: String) async throws -> MealDetails?
 }
 
 class CoinDataService: HTTPDataDownloader, CoinServiceProtocol {
@@ -22,17 +22,25 @@ class CoinDataService: HTTPDataDownloader, CoinServiceProtocol {
         return try await fetchData(as: MealResponse.self, endpoint: endpoint)
     }
     
- 
-    func fetchMealDetails(id: String) async throws -> MealDetailsResponse?  {
+    
+    func fetchMealDetails(id: String) async throws -> MealDetails?  {
         
-//        if let cached = CoinDetailsCache.shared.get(forkey: id) {
-//            return cached
-//        }
+        if let cached = MealDetailsCache.shared.get(forkey: id) {
+            return cached
+        }
         
         guard let endpoint = mealDetailsURLString(id: id) else {
             throw DishcoverApiError.requestFailed(description: "Invalid endpoint")
         }
-        return try await fetchData(as: MealDetailsResponse.self, endpoint: endpoint)
+        
+        let details = try await fetchData(as: MealDetailsResponse.self, endpoint: endpoint)
+        
+        guard let mealDetails = details.meals.first else {
+            throw DishcoverApiError.invalidData
+        }
+        
+        MealDetailsCache.shared.set(mealDetails, forkey: id)
+        return mealDetails
     }
     
     
@@ -52,24 +60,24 @@ class CoinDataService: HTTPDataDownloader, CoinServiceProtocol {
         
         components.queryItems = [
             .init(name: "c", value: "Dessert")
-
+            
         ]
         
         return components.url?.absoluteString
     }
-         
+    
     
     private func mealDetailsURLString(id: String) ->  String? {
         var components = baseUrlComponents
         components.path += "lookup.php"
-
+        
         components.queryItems = [
             .init(name: "i", value: id)
-
+            
         ]
         
         return components.url?.absoluteString
     }
     
-                                               
+    
 }

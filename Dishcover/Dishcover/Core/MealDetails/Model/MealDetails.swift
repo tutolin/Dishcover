@@ -9,11 +9,11 @@ import Foundation
 
 import Foundation
 
-struct MealDetailsResponse: Decodable {
+struct MealDetailsResponse: Codable {
     let meals: [MealDetails]
 }
 
-struct MealDetails: Decodable, Identifiable, Hashable {
+struct MealDetails: Codable, Identifiable, Hashable {
     let id: String
     let strMeal: String
     let strDrinkAlternate: String?
