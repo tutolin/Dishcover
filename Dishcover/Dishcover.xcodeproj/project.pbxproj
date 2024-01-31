@@ -11,6 +11,12 @@
 		FFC7F2512B69F0CF002EBED9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2502B69F0CF002EBED9 /* ContentView.swift */; };
 		FFC7F2532B69F0D1002EBED9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFC7F2522B69F0D1002EBED9 /* Assets.xcassets */; };
 		FFC7F2562B69F0D1002EBED9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFC7F2552B69F0D1002EBED9 /* Preview Assets.xcassets */; };
+		FFC7F25E2B69F370002EBED9 /* HTTPDataDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F25D2B69F370002EBED9 /* HTTPDataDownloader.swift */; };
+		FFC7F2602B69F3A4002EBED9 /* DishcoverApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F25F2B69F3A4002EBED9 /* DishcoverApiError.swift */; };
+		FFC7F2652B69F65D002EBED9 /* DishcoverDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2642B69F65D002EBED9 /* DishcoverDataService.swift */; };
+		FFC7F2672B69F67F002EBED9 /* MockDishcoverService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2662B69F67F002EBED9 /* MockDishcoverService.swift */; };
+		FFC7F2722B6A04ED002EBED9 /* Meals.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2712B6A04ED002EBED9 /* Meals.swift */; };
+		FFC7F2742B6A052F002EBED9 /* MealDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2732B6A052F002EBED9 /* MealDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,12 @@
 		FFC7F2502B69F0CF002EBED9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FFC7F2522B69F0D1002EBED9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFC7F2552B69F0D1002EBED9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FFC7F25D2B69F370002EBED9 /* HTTPDataDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPDataDownloader.swift; sourceTree = "<group>"; };
+		FFC7F25F2B69F3A4002EBED9 /* DishcoverApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishcoverApiError.swift; sourceTree = "<group>"; };
+		FFC7F2642B69F65D002EBED9 /* DishcoverDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishcoverDataService.swift; sourceTree = "<group>"; };
+		FFC7F2662B69F67F002EBED9 /* MockDishcoverService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDishcoverService.swift; sourceTree = "<group>"; };
+		FFC7F2712B6A04ED002EBED9 /* Meals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meals.swift; sourceTree = "<group>"; };
+		FFC7F2732B6A052F002EBED9 /* MealDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +63,8 @@
 		FFC7F24D2B69F0CF002EBED9 /* Dishcover */ = {
 			isa = PBXGroup;
 			children = (
+				FFC7F2682B6A03E4002EBED9 /* Core */,
+				FFC7F25C2B69F335002EBED9 /* Shared */,
 				FFC7F24E2B69F0CF002EBED9 /* DishcoverApp.swift */,
 				FFC7F2502B69F0CF002EBED9 /* ContentView.swift */,
 				FFC7F2522B69F0D1002EBED9 /* Assets.xcassets */,
@@ -65,6 +79,106 @@
 				FFC7F2552B69F0D1002EBED9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FFC7F25C2B69F335002EBED9 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7F2612B69F5C7002EBED9 /* Network Layer */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		FFC7F2612B69F5C7002EBED9 /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7F2632B69F61C002EBED9 /* Services */,
+				FFC7F25D2B69F370002EBED9 /* HTTPDataDownloader.swift */,
+				FFC7F25F2B69F3A4002EBED9 /* DishcoverApiError.swift */,
+			);
+			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		FFC7F2632B69F61C002EBED9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7F2642B69F65D002EBED9 /* DishcoverDataService.swift */,
+				FFC7F2662B69F67F002EBED9 /* MockDishcoverService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FFC7F2682B6A03E4002EBED9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7F26A2B6A03FD002EBED9 /* MealDetails */,
+				FFC7F2692B6A03F2002EBED9 /* AllMeals */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		FFC7F2692B6A03F2002EBED9 /* AllMeals */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7F2702B6A046A002EBED9 /* View */,
+				FFC7F26F2B6A045C002EBED9 /* ViewModel */,
+				FFC7F26E2B6A043D002EBED9 /* Model */,
+			);
+			path = AllMeals;
+			sourceTree = "<group>";
+		};
+		FFC7F26A2B6A03FD002EBED9 /* MealDetails */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7F26D2B6A0433002EBED9 /* Model */,
+				FFC7F26C2B6A0429002EBED9 /* View */,
+				FFC7F26B2B6A0421002EBED9 /* ViewModel */,
+			);
+			path = MealDetails;
+			sourceTree = "<group>";
+		};
+		FFC7F26B2B6A0421002EBED9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FFC7F26C2B6A0429002EBED9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FFC7F26D2B6A0433002EBED9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7F2732B6A052F002EBED9 /* MealDetails.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FFC7F26E2B6A043D002EBED9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7F2712B6A04ED002EBED9 /* Meals.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FFC7F26F2B6A045C002EBED9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FFC7F2702B6A046A002EBED9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +251,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFC7F2722B6A04ED002EBED9 /* Meals.swift in Sources */,
+				FFC7F2742B6A052F002EBED9 /* MealDetails.swift in Sources */,
 				FFC7F2512B69F0CF002EBED9 /* ContentView.swift in Sources */,
+				FFC7F2672B69F67F002EBED9 /* MockDishcoverService.swift in Sources */,
+				FFC7F2602B69F3A4002EBED9 /* DishcoverApiError.swift in Sources */,
+				FFC7F25E2B69F370002EBED9 /* HTTPDataDownloader.swift in Sources */,
+				FFC7F2652B69F65D002EBED9 /* DishcoverDataService.swift in Sources */,
 				FFC7F24F2B69F0CF002EBED9 /* DishcoverApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
