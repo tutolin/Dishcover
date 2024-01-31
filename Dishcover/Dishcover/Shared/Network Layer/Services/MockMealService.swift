@@ -1,5 +1,5 @@
 //
-//  MockDishcoverService.swift
+//  MockMealService.swift
 //  Dishcover
 //
 //  Created by Tolulope Aboyeji on 30/01/2024.

@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		FFC7F24F2B69F0CF002EBED9 /* DishcoverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F24E2B69F0CF002EBED9 /* DishcoverApp.swift */; };
-		FFC7F2512B69F0CF002EBED9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2502B69F0CF002EBED9 /* ContentView.swift */; };
+		FFC7F2512B69F0CF002EBED9 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2502B69F0CF002EBED9 /* MealView.swift */; };
 		FFC7F2532B69F0D1002EBED9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFC7F2522B69F0D1002EBED9 /* Assets.xcassets */; };
 		FFC7F2562B69F0D1002EBED9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFC7F2552B69F0D1002EBED9 /* Preview Assets.xcassets */; };
 		FFC7F25E2B69F370002EBED9 /* HTTPDataDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F25D2B69F370002EBED9 /* HTTPDataDownloader.swift */; };
 		FFC7F2602B69F3A4002EBED9 /* DishcoverApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F25F2B69F3A4002EBED9 /* DishcoverApiError.swift */; };
-		FFC7F2652B69F65D002EBED9 /* DishcoverDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2642B69F65D002EBED9 /* DishcoverDataService.swift */; };
-		FFC7F2672B69F67F002EBED9 /* MockDishcoverService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2662B69F67F002EBED9 /* MockDishcoverService.swift */; };
+		FFC7F2652B69F65D002EBED9 /* MealDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2642B69F65D002EBED9 /* MealDataService.swift */; };
+		FFC7F2672B69F67F002EBED9 /* MockMealService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2662B69F67F002EBED9 /* MockMealService.swift */; };
 		FFC7F2722B6A04ED002EBED9 /* Meals.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2712B6A04ED002EBED9 /* Meals.swift */; };
 		FFC7F2742B6A052F002EBED9 /* MealDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2732B6A052F002EBED9 /* MealDetails.swift */; };
 		FFC7F2772B6A24EC002EBED9 /* MealDetailsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2762B6A24EC002EBED9 /* MealDetailsCache.swift */; };
@@ -22,18 +22,19 @@
 		FFC7F27C2B6A2A12002EBED9 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F27B2B6A2A12002EBED9 /* ImageCache.swift */; };
 		FFC7F27F2B6A2E74002EBED9 /* MealsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F27E2B6A2E74002EBED9 /* MealsViewModel.swift */; };
 		FFC7F2812B6A2E95002EBED9 /* MealDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2802B6A2E95002EBED9 /* MealDetailsViewModel.swift */; };
+		FFC7F2832B6A3A7D002EBED9 /* MealImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2822B6A3A7D002EBED9 /* MealImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FFC7F24B2B69F0CF002EBED9 /* Dishcover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dishcover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC7F24E2B69F0CF002EBED9 /* DishcoverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishcoverApp.swift; sourceTree = "<group>"; };
-		FFC7F2502B69F0CF002EBED9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FFC7F2502B69F0CF002EBED9 /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
 		FFC7F2522B69F0D1002EBED9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFC7F2552B69F0D1002EBED9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FFC7F25D2B69F370002EBED9 /* HTTPDataDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPDataDownloader.swift; sourceTree = "<group>"; };
 		FFC7F25F2B69F3A4002EBED9 /* DishcoverApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishcoverApiError.swift; sourceTree = "<group>"; };
-		FFC7F2642B69F65D002EBED9 /* DishcoverDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishcoverDataService.swift; sourceTree = "<group>"; };
-		FFC7F2662B69F67F002EBED9 /* MockDishcoverService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDishcoverService.swift; sourceTree = "<group>"; };
+		FFC7F2642B69F65D002EBED9 /* MealDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDataService.swift; sourceTree = "<group>"; };
+		FFC7F2662B69F67F002EBED9 /* MockMealService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMealService.swift; sourceTree = "<group>"; };
 		FFC7F2712B6A04ED002EBED9 /* Meals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meals.swift; sourceTree = "<group>"; };
 		FFC7F2732B6A052F002EBED9 /* MealDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetails.swift; sourceTree = "<group>"; };
 		FFC7F2762B6A24EC002EBED9 /* MealDetailsCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsCache.swift; sourceTree = "<group>"; };
@@ -41,6 +42,7 @@
 		FFC7F27B2B6A2A12002EBED9 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		FFC7F27E2B6A2E74002EBED9 /* MealsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsViewModel.swift; sourceTree = "<group>"; };
 		FFC7F2802B6A2E95002EBED9 /* MealDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsViewModel.swift; sourceTree = "<group>"; };
+		FFC7F2822B6A3A7D002EBED9 /* MealImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +114,8 @@
 		FFC7F2632B69F61C002EBED9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				FFC7F2642B69F65D002EBED9 /* DishcoverDataService.swift */,
-				FFC7F2662B69F67F002EBED9 /* MockDishcoverService.swift */,
+				FFC7F2642B69F65D002EBED9 /* MealDataService.swift */,
+				FFC7F2662B69F67F002EBED9 /* MockMealService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -190,7 +192,8 @@
 		FFC7F2702B6A046A002EBED9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FFC7F2502B69F0CF002EBED9 /* ContentView.swift */,
+				FFC7F2502B69F0CF002EBED9 /* MealView.swift */,
+				FFC7F2822B6A3A7D002EBED9 /* MealImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -294,14 +297,15 @@
 				FFC7F2722B6A04ED002EBED9 /* Meals.swift in Sources */,
 				FFC7F2742B6A052F002EBED9 /* MealDetails.swift in Sources */,
 				FFC7F27A2B6A29A4002EBED9 /* ImageLoader.swift in Sources */,
-				FFC7F2512B69F0CF002EBED9 /* ContentView.swift in Sources */,
+				FFC7F2512B69F0CF002EBED9 /* MealView.swift in Sources */,
 				FFC7F27F2B6A2E74002EBED9 /* MealsViewModel.swift in Sources */,
-				FFC7F2672B69F67F002EBED9 /* MockDishcoverService.swift in Sources */,
+				FFC7F2672B69F67F002EBED9 /* MockMealService.swift in Sources */,
 				FFC7F2772B6A24EC002EBED9 /* MealDetailsCache.swift in Sources */,
 				FFC7F2812B6A2E95002EBED9 /* MealDetailsViewModel.swift in Sources */,
+				FFC7F2832B6A3A7D002EBED9 /* MealImageView.swift in Sources */,
 				FFC7F2602B69F3A4002EBED9 /* DishcoverApiError.swift in Sources */,
 				FFC7F25E2B69F370002EBED9 /* HTTPDataDownloader.swift in Sources */,
-				FFC7F2652B69F65D002EBED9 /* DishcoverDataService.swift in Sources */,
+				FFC7F2652B69F65D002EBED9 /* MealDataService.swift in Sources */,
 				FFC7F24F2B69F0CF002EBED9 /* DishcoverApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

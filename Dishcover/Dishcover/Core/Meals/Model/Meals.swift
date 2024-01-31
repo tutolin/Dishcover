@@ -9,7 +9,7 @@ import Foundation
 
 
 struct MealResponse: Decodable {
-    let meals: [Meals]
+    let meals: [Meals]?
 }
 
 struct Meals: Decodable, Identifiable, Hashable {

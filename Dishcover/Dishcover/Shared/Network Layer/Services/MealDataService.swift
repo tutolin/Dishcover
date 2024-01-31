@@ -1,5 +1,5 @@
 //
-//  DishcoverDataService.swift
+//  MealDataService.swift
 //  Dishcover
 //
 //  Created by Tolulope Aboyeji on 30/01/2024.
@@ -7,19 +7,25 @@
 
 import Foundation
 
-protocol CoinServiceProtocol {
-    func fetchMeals() async throws -> MealResponse
+protocol MealServiceProtocol {
+    func fetchMeals() async throws -> [Meals]?
     func fetchMealDetails(id: String) async throws -> MealDetails?
 }
 
-class CoinDataService: HTTPDataDownloader, CoinServiceProtocol {
+class MealDataService: HTTPDataDownloader, MealServiceProtocol {
     
-    func fetchMeals() async throws -> MealResponse {
+    func fetchMeals() async throws -> [Meals]? {
         
         guard let endpoint = allMealsURLString() else {
             throw DishcoverApiError.requestFailed(description: "Invalid endpoint")
         }
-        return try await fetchData(as: MealResponse.self, endpoint: endpoint)
+        let meal = try await fetchData(as: MealResponse.self, endpoint: endpoint)
+        
+        guard let mealArray = meal.meals else {
+            throw DishcoverApiError.invalidData
+        }
+
+        return mealArray
     }
     
     
