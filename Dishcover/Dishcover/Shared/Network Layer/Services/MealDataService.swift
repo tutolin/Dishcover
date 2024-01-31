@@ -41,6 +41,8 @@ class MealDataService: HTTPDataDownloader, MealServiceProtocol {
         
         let details = try await fetchData(as: MealDetailsResponse.self, endpoint: endpoint)
         
+        print("===>", details)
+        
         guard let mealDetails = details.meals.first else {
             throw DishcoverApiError.invalidData
         }

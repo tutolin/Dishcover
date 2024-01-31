@@ -32,6 +32,7 @@ class MealsViewModel: ObservableObject {
         } catch {
             guard let error = error as? DishcoverApiError else { return }
             self.errorMessage = error.customDescription
+            print("errorMessage")
         }
         isLoading = false
 

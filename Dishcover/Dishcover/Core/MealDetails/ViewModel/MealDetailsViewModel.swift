@@ -9,25 +9,34 @@ import Foundation
 
 class MealDetailsViewModel: ObservableObject {
     
-    private let service: MealServiceProtocol
-    private var mealId: String
-    
     @Published var mealDetails: MealDetails?
+    @Published var errorMessage: String?
+    @Published var isLoading = false
 
     
+    private let service: MealServiceProtocol
+    private var mealId: String
     
     init(mealId: String, service: MealServiceProtocol) {
         self.service = service
         self.mealId = mealId
+        Task {
+           await fetchMealDetails()
+        }
     }
     
     @MainActor
-    func fetchCoins()  async throws {
+    func fetchMealDetails()  async {
+        isLoading = true
         do {
+            print(mealId)
             self.mealDetails = try await service.fetchMealDetails(id: mealId )
         } catch {
-            print("error")
+            guard let error = error as? DishcoverApiError else { return }
+            self.errorMessage = error.customDescription
         }
+        isLoading = false
+
     }
     
   

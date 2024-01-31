@@ -23,6 +23,8 @@
 		FFC7F27F2B6A2E74002EBED9 /* MealsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F27E2B6A2E74002EBED9 /* MealsViewModel.swift */; };
 		FFC7F2812B6A2E95002EBED9 /* MealDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2802B6A2E95002EBED9 /* MealDetailsViewModel.swift */; };
 		FFC7F2832B6A3A7D002EBED9 /* MealImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2822B6A3A7D002EBED9 /* MealImageView.swift */; };
+		FFC7F2852B6A464C002EBED9 /* MealDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2842B6A464C002EBED9 /* MealDetailsView.swift */; };
+		FFC7F2872B6ACA2A002EBED9 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F2862B6ACA2A002EBED9 /* MockData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		FFC7F27E2B6A2E74002EBED9 /* MealsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsViewModel.swift; sourceTree = "<group>"; };
 		FFC7F2802B6A2E95002EBED9 /* MealDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsViewModel.swift; sourceTree = "<group>"; };
 		FFC7F2822B6A3A7D002EBED9 /* MealImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealImageView.swift; sourceTree = "<group>"; };
+		FFC7F2842B6A464C002EBED9 /* MealDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsView.swift; sourceTree = "<group>"; };
+		FFC7F2862B6ACA2A002EBED9 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 			children = (
 				FFC7F2642B69F65D002EBED9 /* MealDataService.swift */,
 				FFC7F2662B69F67F002EBED9 /* MockMealService.swift */,
+				FFC7F2862B6ACA2A002EBED9 /* MockData.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 		FFC7F26C2B6A0429002EBED9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FFC7F2842B6A464C002EBED9 /* MealDetailsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -300,11 +306,13 @@
 				FFC7F2512B69F0CF002EBED9 /* MealView.swift in Sources */,
 				FFC7F27F2B6A2E74002EBED9 /* MealsViewModel.swift in Sources */,
 				FFC7F2672B69F67F002EBED9 /* MockMealService.swift in Sources */,
+				FFC7F2852B6A464C002EBED9 /* MealDetailsView.swift in Sources */,
 				FFC7F2772B6A24EC002EBED9 /* MealDetailsCache.swift in Sources */,
 				FFC7F2812B6A2E95002EBED9 /* MealDetailsViewModel.swift in Sources */,
 				FFC7F2832B6A3A7D002EBED9 /* MealImageView.swift in Sources */,
 				FFC7F2602B69F3A4002EBED9 /* DishcoverApiError.swift in Sources */,
 				FFC7F25E2B69F370002EBED9 /* HTTPDataDownloader.swift in Sources */,
+				FFC7F2872B6ACA2A002EBED9 /* MockData.swift in Sources */,
 				FFC7F2652B69F65D002EBED9 /* MealDataService.swift in Sources */,
 				FFC7F24F2B69F0CF002EBED9 /* DishcoverApp.swift in Sources */,
 			);

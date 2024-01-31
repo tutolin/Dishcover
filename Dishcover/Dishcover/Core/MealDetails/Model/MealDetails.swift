@@ -16,24 +16,30 @@ struct MealDetailsResponse: Codable {
 struct MealDetails: Codable, Identifiable, Hashable {
     let id: String
     let strMeal: String
-    let strDrinkAlternate: String?
-    let strCategory: String
-    let strArea: String
     let strInstructions: String
     let strMealThumb: String
-    let strTags: String
-    let strYoutube: String
-    let strSource: String
-    let strImageSource: String?
-    let strCreativeCommonsConfirmed: String?
-    let dateModified: String?
     let ingredients: [String]
     let measures: [String]
-
+    
+     var ingredientMeasures: [String] {
+         zip(ingredients, measures).map { "\($0) - \($1)" }
+     }
     
     enum CodingKeys: String, CodingKey {
         case id = "idMeal"
-        case strMeal, strDrinkAlternate, strCategory, strArea, strInstructions, strMealThumb, strTags, strYoutube, strSource, strImageSource, strCreativeCommonsConfirmed, dateModified
+        case strMeal, strInstructions, strMealThumb
+    }
+    
+    struct DynamicKey: CodingKey {
+        var stringValue: String
+        var intValue: Int?
+        init?(stringValue: String) {
+            self.stringValue = stringValue
+        }
+        init?(intValue: Int) {
+            self.stringValue = "\(intValue)";
+            self.intValue = intValue
+        }
     }
     
     init(from decoder: Decoder) throws {
@@ -41,38 +47,16 @@ struct MealDetails: Codable, Identifiable, Hashable {
         
         id = try container.decode(String.self, forKey: .id)
         strMeal = try container.decode(String.self, forKey: .strMeal)
-        strDrinkAlternate = try container.decodeIfPresent(String.self, forKey: .strDrinkAlternate)
-        strCategory = try container.decode(String.self, forKey: .strCategory)
-        strArea = try container.decode(String.self, forKey: .strArea)
         strInstructions = try container.decode(String.self, forKey: .strInstructions)
         strMealThumb = try container.decode(String.self, forKey: .strMealThumb)
-        strTags = try container.decode(String.self, forKey: .strTags)
-        strYoutube = try container.decode(String.self, forKey: .strYoutube)
-        strSource = try container.decode(String.self, forKey: .strSource)
-        strImageSource = try container.decodeIfPresent(String.self, forKey: .strImageSource)
-        strCreativeCommonsConfirmed = try container.decodeIfPresent(String.self, forKey: .strCreativeCommonsConfirmed)
-        dateModified = try container.decodeIfPresent(String.self, forKey: .dateModified)
-        
-   
-        let ingredients = try container.allKeys
-            .filter { $0.stringValue.hasPrefix("strIngredient") }
-            .compactMap { key -> String? in
-                guard let ingredient = try container.decodeIfPresent(String.self, forKey: key), !ingredient.isEmpty else {
-                    return nil
-                }
-                return ingredient
-            }
-        self.ingredients = ingredients
-        
-        let measures = try container.allKeys
-            .filter { $0.stringValue.hasPrefix("strMeasure") }
-            .compactMap { key -> String? in
-                guard let measure = try container.decodeIfPresent(String.self, forKey: key), !measure.isEmpty else {
-                    return nil
-                }
-                return measure
-            }
-        self.measures = measures
+    
+        let dynamicContainer = try decoder.container(keyedBy: DynamicKey.self)
+
+        let ingredientKeys = dynamicContainer.allKeys.filter { $0.stringValue.starts(with: "strIngredient") }.sorted(by: { $0.stringValue < $1.stringValue })
+        let measureKeys = dynamicContainer.allKeys.filter { $0.stringValue.starts(with: "strMeasure") }.sorted(by: { $0.stringValue < $1.stringValue })
+
+        ingredients = ingredientKeys.compactMap { try? dynamicContainer.decodeIfPresent(String.self, forKey: $0) }.filter { !$0.trimmingCharacters(in: .whitespaces).isEmpty }
+        measures = measureKeys.compactMap { try? dynamicContainer.decodeIfPresent(String.self, forKey: $0) }.filter { !$0.trimmingCharacters(in: .whitespaces).isEmpty }
         
         
     }

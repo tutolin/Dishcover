@@ -11,7 +11,9 @@ import SwiftUI
 struct DishcoverApp: App {
     var body: some Scene {
         WindowGroup {
-            MealView(service: MealDataService())
+            NavigationStack {
+                MealView(service: MealDataService())
+            }
         }
     }
 }
