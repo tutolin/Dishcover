@@ -5,7 +5,7 @@ Dishcover is an iOS application designed to help you uncover delightful dessert 
 <p float="left">
     <img src=“Images/screen1.png" width="250" />
     <img src="Images/screen2.png" width="250"/>    
-    <img src="Images/screen3.png" width="250" />
+    <img src="Images/screen2-1.png" width="250" />
 </p>
 
 ## Technologies and Stack  
